@@ -5,9 +5,14 @@ pipeline {
         }
     }
     stages {
-        stage('build') {
+        stage('env') {
             steps {
                 sh 'mvn --version'
+            }
+        }
+        state('build') {
+            steps {
+                sh 'mvn clean install'
             }
         }
     }
