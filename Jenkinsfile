@@ -10,7 +10,7 @@ pipeline {
                 sh 'mvn --version'
             }
         }
-        state('build') {
+        stage('build') {
             steps {
                 sh 'mvn clean install'
             }
