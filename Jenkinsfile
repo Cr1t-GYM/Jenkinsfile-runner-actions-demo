@@ -8,11 +8,12 @@ pipeline {
         stage('env') {
             steps {
                 sh 'mvn --version'
+                sh 'mkdir ~/.m2'
             }
         }
         stage('build') {
             steps {
-                sh 'sudo mvn clean install'
+                sh 'mvn clean install'
             }
         }
     }
