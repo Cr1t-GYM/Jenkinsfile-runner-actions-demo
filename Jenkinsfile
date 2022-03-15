@@ -8,7 +8,6 @@ pipeline {
         stage('env') {
             steps {
                 sh 'mvn --version'
-                sh 'mkdir ~/.m2'
             }
         }
         stage('build') {
