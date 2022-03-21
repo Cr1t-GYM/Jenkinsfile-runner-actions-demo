@@ -22,14 +22,13 @@ run() {
   echo "jenkins-plugin-manager: ${plugin_manager_ver}"
   echo "jenkinsfile-runner: ${runner_ver}"
 
-  echo
+  echo "Downloading your plugins..."
   echo "java -jar /app/bin/jenkins-plugin-manager.jar --war /app/jenkins-${JENKINS_VERSION}.war --plugin-file ${pluginstxt} --plugin-download-directory=/usr/share/jenkins/ref/plugins"
   java -jar /app/bin/jenkins-plugin-manager.jar --war /app/jenkins-${JENKINS_VERSION}.war --plugin-file ${pluginstxt} --plugin-download-directory=/usr/share/jenkins/ref/plugins
 
-  echo
   ls -lrt /usr/share/jenkins/ref/plugins
 
-  echo
+  echo "Launch your pipeline..."
   echo "/app/bin/jenkinsfile-runner-launcher ${command} --jenkins-war=/app/jenkins-${JENKINS_VERSION} --file=${jenkinsfile} --plugins=/usr/share/jenkins/ref/plugins"
   /app/bin/jenkinsfile-runner-launcher ${command} --jenkins-war=/app/jenkins-${JENKINS_VERSION} --file=${jenkinsfile} --plugins=/usr/share/jenkins/ref/plugins
 }
