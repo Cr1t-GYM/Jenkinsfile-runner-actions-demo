@@ -5,7 +5,7 @@ ENV JENKINS_VERSION=2.338
 COPY plugins.txt /app/setup/plugins.txt
 
 RUN curl -L http://updates.jenkins.io/download/war/${JENKINS_VERSION}/jenkins.war -o /app/jenkins-${JENKINS_VERSION}.war
-RUN apt-get update && apt-get install -y zip git
+RUN apt-get update && apt-get install -y zip git maven
 
 COPY setup.sh /app/setup/setup.sh
 RUN /app/setup/setup.sh
