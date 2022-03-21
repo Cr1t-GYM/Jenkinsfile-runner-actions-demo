@@ -11,4 +11,4 @@ jobs:
         with:
           jenkinsfile: "Jenkinsfile"
           pluginstxt: "plugins.txt"
-          command: "lint"
+          command: "run"
