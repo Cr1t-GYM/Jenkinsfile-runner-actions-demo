@@ -4,7 +4,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     container:
-      image: registry.hub.docker.com/cr1tgym/jekins:tagname
+      image: registry.hub.docker.com/cr1tgym/jekins:latest
       credentials:
         username: ${{  secrets.DOCKER_CONTAINER_USERNAME }}
         password: ${{  secrets.DOCKER_CONTAINER_REGISTRY_TOKEN }}
