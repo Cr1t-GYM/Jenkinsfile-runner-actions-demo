@@ -3,12 +3,14 @@ on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
+    container:
+      image: registry.hub.docker.com/cr1tgym/jekins:latest
+      credentials:
+        username: ${{  secrets.DOCKER_CONTAINER_USERNAME }}
+        password: ${{  secrets.DOCKER_CONTAINER_REGISTRY_TOKEN }}
     steps:
       - uses: actions/checkout@v2
-
-      - name: Test; jenkinsfile-runner-prepackaged
-        uses: ./
-        with:
-          jenkinsfile: "Jenkinsfile"
-          pluginstxt: "plugins.txt"
-          command: "run"
+      - name: compile in pre-built container
+        shell: bash
+        run: |
+          /entrypoint.sh "Jenkinsfile" "plugins.txt" "run"
