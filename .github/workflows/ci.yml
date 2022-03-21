@@ -7,7 +7,7 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Test; jenkinsfile-runner-prepackaged
-        uses: .
+        uses: ./
         with:
           jenkinsfile: "Jenkinsfile"
           pluginstxt: "plugins.txt"
