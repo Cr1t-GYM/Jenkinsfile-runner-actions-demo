@@ -11,8 +11,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: compile in pre-built container
-        uses: ./
-        with:
-          jenkinsfile: "Jenkinsfile"
-          pluginstxt: "plugins.txt"
-          command: "run"
+        shell: bash
+        run: |
+          /entrypoint.sh "Jenkinsfile" "plugins.txt" "run"
