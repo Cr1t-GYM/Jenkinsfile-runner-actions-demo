@@ -3,10 +3,14 @@ on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
+    container:
+      image: cr1tgym/jekins:tagname
+      credentials:
+        username: ${{  secrets.DOCKER_CONTAINER_USERNAME }}
+        password: ${{  secrets.DOCKER_CONTAINER_REGISTRY_TOKEN }}
     steps:
       - uses: actions/checkout@v2
-
-      - name: Test; jenkinsfile-runner-prepackaged
+      - name: compile in pre-built container
         uses: ./
         with:
           jenkinsfile: "Jenkinsfile"
