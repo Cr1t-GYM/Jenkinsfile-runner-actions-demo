@@ -1,8 +1,6 @@
 # extend vannila image
 FROM jenkins/jenkinsfile-runner
 # prepare env
-COPY ../plugins.txt /plugins.txt
-COPY entrypoint.sh /entrypoint.sh
 RUN cd /app/jenkins && jar -cvf jenkins.war *
 # extra env
 RUN /usr/bin/bash -c apt-get update && apt-get install -y zip git maven
