@@ -1,7 +1,8 @@
 # extend vannila image
 FROM jenkins/jenkinsfile-runner
 # prepare env
-RUN cd /app/jenkins && jar -cvf jenkins.war *
+ENV JENKINS_VERSION=2.319.3
+RUN curl -L http://updates.jenkins.io/download/war/${JENKINS_VERSION}/jenkins.war -o /app/jenkins-${JENKINS_VERSION}.war
 COPY entrypoint.sh /entrypoint.sh
 # extra env
 RUN apt-get update && apt-get install -y git maven
