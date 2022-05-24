@@ -6,7 +6,7 @@ jobs:
     name: jfr-action JCasC test
     steps:
       - name: Jenkins pipeline
-        id: jenkins pipeline
+        id: jenkins_pipeline
         uses: ./jfr-action
         with:
           command: "run"
