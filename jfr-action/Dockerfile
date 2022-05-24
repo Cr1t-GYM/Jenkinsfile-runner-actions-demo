@@ -3,6 +3,6 @@ FROM jenkins/jenkinsfile-runner
 # prepare env
 RUN cd /app/jenkins && jar -cvf jenkins.war *
 # extra env
-RUN /usr/bin/bash -c apt-get update && apt-get install -y zip git maven
+RUN apt-get update && apt-get install -y zip git maven
 
 ENTRYPOINT ["/entrypoint.sh"]
