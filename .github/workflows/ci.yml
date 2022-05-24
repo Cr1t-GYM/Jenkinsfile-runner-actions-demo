@@ -5,6 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     name: jfr-action JCasC test
     steps:
+      - uses: actions/checkout@v2
       - name: Jenkins pipeline
         id: jenkins_pipeline
         uses: ./jfr-action
