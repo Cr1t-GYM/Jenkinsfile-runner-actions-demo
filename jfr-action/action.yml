@@ -7,11 +7,11 @@ inputs:
     required: false
   pluginstxt:
     description: plugins.txt location
-    default: /plugins.txt
+    default: /github/workspace/plugins.txt
     required: false
   jenkinsfile:
     description: Jenkinsfile location to test
-    default: /Jenkinsfile
+    default: /github/workspace/Jenkinsfile
     required: false
 runs:
   using: 'docker'

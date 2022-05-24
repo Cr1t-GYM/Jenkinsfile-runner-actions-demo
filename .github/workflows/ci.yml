@@ -11,5 +11,5 @@ jobs:
         uses: ./jfr-action
         with:
           command: "run"
-          pluginstxt: "/plugins.txt"
-          jenkinsfile: "/Jenkinsfile"
+          pluginstxt: "/github/workspace/plugins.txt"
+          jenkinsfile: "/github/workspace/Jenkinsfile"
