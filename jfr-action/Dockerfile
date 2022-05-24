@@ -2,6 +2,7 @@
 FROM jenkins/jenkinsfile-runner
 # prepare env
 RUN cd /app/jenkins && jar -cvf jenkins.war *
+COPY entrypoint.sh /entrypoint.sh
 # extra env
 RUN apt-get update && apt-get install -y zip git maven
 
