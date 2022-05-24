@@ -2,6 +2,6 @@
 
 set -e
 
-ls /github/workspace/
+/app/bin/jenkins-plugin-manager.jar --war /app/jenkins/jenkins.war --plugin-file "$2"
 
 /app/bin/jenkinsfile-runner-launcher "$1" -w /app/jenkins/jenkins.war -p "$2" -f "$3"
