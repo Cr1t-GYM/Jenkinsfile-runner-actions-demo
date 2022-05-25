@@ -8,4 +8,4 @@ unclassified:
     smtpHost: "smtp.qq.com"
     smtpPort: "587"
     useSsl: true
-    useTls: false
+    useTls: true
