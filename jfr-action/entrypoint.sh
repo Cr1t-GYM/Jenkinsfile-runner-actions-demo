@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
 set -e
-rm -rf /usr/share/jenkins/ref/plugins
-#echo "p0"
-#java -jar /app/bin/jenkins-plugin-manager.jar --available-updates
+#rm -rf /usr/share/jenkins/ref/plugins
+echo "p0"
+java -jar /app/bin/jenkins-plugin-manager.jar --available-updates --war /app/jenkins-${JENKINS_VERSION}.war
 echo "p1"
 unzip /app/jenkins-${JENKINS_VERSION}.war -d /app/jenkins-${JENKINS_VERSION}
 echo "p2"
