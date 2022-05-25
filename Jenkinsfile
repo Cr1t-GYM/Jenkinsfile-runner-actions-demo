@@ -16,10 +16,10 @@ pipeline {
                 sh 'mvn clean install -e'
             }
         }
-        post {
-            always {
-                emailext body: 'A Test EMail', subject: 'Test'
-            }
+    }
+    post {
+        always {
+            emailext body: 'A Test EMail', subject: 'Test'
         }
     }
 }
