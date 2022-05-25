@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 set -e
-rm -rf /usr/share/jenkins/ref/plugins
+#rm -rf /usr/share/jenkins/ref/plugins
 echo "p1"
 unzip /app/jenkins-${JENKINS_VERSION}.war -d /app/jenkins-${JENKINS_VERSION}
 echo "p2"
