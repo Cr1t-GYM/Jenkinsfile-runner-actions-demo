@@ -1,3 +1,3 @@
-git:latest
-pipeline-model-definition:latest
-configuration-as-code:latest
+git
+pipeline-model-definition
+configuration-as-code
