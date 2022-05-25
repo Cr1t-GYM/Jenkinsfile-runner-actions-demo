@@ -19,7 +19,8 @@ pipeline {
     }
     post {
         always {
-            emailext body: 'A Test EMail', subject: 'Test'
+            step([$class: 'Mailer', notifyEveryUnstableBuild: true,
+                recipients: '277645526@qq.com'])
         }
     }
 }
