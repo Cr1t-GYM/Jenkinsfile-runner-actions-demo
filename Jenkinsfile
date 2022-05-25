@@ -16,6 +16,11 @@ pipeline {
                 sh 'mvn clean install -e'
             }
         }
+        stage('mock failure') {
+            steps {
+                error('An error occurred on stage 1')
+            }
+        }
     }
     post {
         always {
