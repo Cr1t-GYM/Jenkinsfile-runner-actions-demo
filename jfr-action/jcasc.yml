@@ -1,5 +1,11 @@
 unclassified:
   mailer:
-    replyToAddress: 277645526@qq.com
-    smtpHost: smtp.qq.com
-    smtpPort: 465
+    authentication:
+      password: "{AQAAABAAAAAgvQEJombgkKYaxA1IvDyGE6gUBZvgVLaIVSdYwX51laWUJXlOPIxc9X7olDkju+BI}"
+      username: "277645526@qq.com"
+    charset: "UTF-8"
+    replyToAddress: "277645526@qq.com"
+    smtpHost: "smtp.qq.com"
+    smtpPort: "587"
+    useSsl: true
+    useTls: false
