@@ -17,7 +17,9 @@ pipeline {
             }
         }
         stage('test casc env') {
-            echo "An environment variable configured via JCasC: ${env.SOME_CASC_ENV_VAR}"
+            steps {
+                echo "An environment variable configured via JCasC: ${env.SOME_CASC_ENV_VAR}"
+            }
         }
         stage('test terraform casc') {
             steps {
