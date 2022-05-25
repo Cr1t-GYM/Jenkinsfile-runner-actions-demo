@@ -6,6 +6,6 @@ unclassified:
     charset: "UTF-8"
     replyToAddress: "277645526@qq.com"
     smtpHost: "smtp.qq.com"
-    smtpPort: "465"
+    smtpPort: "587"
     useSsl: true
     useTls: false
