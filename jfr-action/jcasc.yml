@@ -1,3 +1,9 @@
+jenkins:
+  globalNodeProperties:
+    - envVars:
+        env:
+          - key: SOME_CASC_ENV_VAR
+            value: a value configured via JCasC
 tool:
   terraform:
     installations:
