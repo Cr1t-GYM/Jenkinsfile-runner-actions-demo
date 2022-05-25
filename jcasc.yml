@@ -1,0 +1,5 @@
+unclassified:
+  mailer:
+    replyToAddress: 277645526@qq.com
+    smtpHost: smtp.qq.com
+    smtpPort: 465
