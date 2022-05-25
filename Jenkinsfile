@@ -16,16 +16,10 @@ pipeline {
                 sh 'mvn clean install -e'
             }
         }
-        stage('mock failure') {
+        stage('test terraform casc') {
             steps {
-                error('An error occurred on stage 1')
+                sh 'terraform --version'
             }
-        }
-    }
-    post {
-        always {
-            step([$class: 'Mailer', notifyEveryUnstableBuild: true,
-                recipients: '277645526@qq.com'])
         }
     }
 }

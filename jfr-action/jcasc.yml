@@ -1,11 +1,10 @@
-unclassified:
-  mailer:
-    authentication:
-      password: "fpqisyqmbxfncagc"
-      username: "277645526@qq.com"
-    charset: "UTF-8"
-    replyToAddress: "277645526@qq.com"
-    smtpHost: "smtp.qq.com"
-    smtpPort: "587"
-    useSsl: true
-    useTls: true
+tool:
+  terraform:
+    installations:
+      - name: "terraform"
+        home: "/terraform-0.11"
+        properties:
+          - installSource:
+              installers:
+                - terraformInstaller:
+                    id: "0.11.9-linux-amd64"
