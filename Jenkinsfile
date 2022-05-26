@@ -23,6 +23,7 @@ pipeline {
         }
         stage('test terraform casc') {
             steps {
+                terraformInstallation("terraform")
                 sh 'ls /terraform-0.11'
                 sh 'terraform --version'
             }
