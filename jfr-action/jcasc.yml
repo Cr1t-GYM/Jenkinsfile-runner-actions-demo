@@ -2,37 +2,5 @@ jenkins:
   globalNodeProperties:
     - envVars:
         env:
-          - key: SOME_CASC_ENV_VAR
-            value: a value configured via JCasC
-tool:
-  terraform:
-    installations:
-      - name: "terraform"
-        home: "/terraform-0.11"
-        properties:
-          - installSource:
-              installers:
-                - terraformInstaller:
-                    id: "0.11.9-linux-amd64"
-#jobs:
-#  - script: >
-#      job("terraform-job") {
-#        description()
-#        keepDependencies(false)
-#        disabled(false)
-#        concurrentBuild(false)
-#        wrappers {
-#           terraformBuildWrapper {
-#              variables("")
-#              terraformInstallation("terraform")
-#              doGetUpdate(true)
-#              doNotApply(false)
-#              doDestroy(false)
-#              config {
-#                 value("inline")
-#                 inlineConfig("")
-#                 fileConfig("")
-#              }
-#           }
-#        }
-#      }
+          - key: PP
+            value: Chew
