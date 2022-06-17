@@ -1,3 +1,8 @@
+jenkins:
+  updateCenter:
+    sites:
+      - id: "default"
+        url: "https://updates.jenkins.io/update-center.json"
 tool:
   maven:
     installations:
@@ -7,7 +12,7 @@ tool:
           - installSource:
               installers:
                 - maven:
-                    id: "3.5.4"
+                    id: "3.6.3"
   mavenGlobalConfig:
     globalSettingsProvider: "standard"
     settingsProvider: "standard"
