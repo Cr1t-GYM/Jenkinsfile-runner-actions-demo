@@ -9,7 +9,6 @@ jobs:
       - name: Jenkins pipeline with the static image
         id: jenkins_pipeline_image
         uses:
-#          ./jfr-static-image-action
           Cr1t-GYM/jenkins-action-poc/jfr-static-image-action@master
         with:
           command: run
@@ -30,9 +29,27 @@ jobs:
       - name: Jenkins pipeline in the container
         id: jenkins_pipeline_container
         uses:
-#          ./jfr-container-action
           Cr1t-GYM/jenkins-action-poc/jfr-container-action@master
         with:
           command: run
           jenkinsfile: Jenkinsfile
           pluginstxt: plugins.txt
+          jcasc: jcasc.yml
+  jenkins-runtime-pipeline:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Jenkins plugins download
+        id: jenkins_plugins_download
+        uses:
+          Cr1t-GYM/jenkins-action-poc/jenkins-plugin-installation-action@master
+        with:
+          pluginstxt: plugins.txt
+      - name: Run Jenkins pipeline
+        id: run_jenkins_pipeline
+        uses:
+          Cr1t-GYM/jenkins-action-poc/jenkinsfile-runner-action@master
+        with:
+          command: run
+          jenkinsfile: Jenkinsfile
+          jcasc: jcasc.yml
