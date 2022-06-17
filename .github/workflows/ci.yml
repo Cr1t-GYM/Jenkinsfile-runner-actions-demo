@@ -8,6 +8,10 @@ jobs:
       image: jenkins/jenkinsfile-runner
     steps:
       - uses: actions/checkout@v2
+      - name: Set up Maven
+        uses: stCarolas/setup-maven@v4.3
+        with:
+          maven-version: 3.6.3
       - name: Jenkins pipeline in the container
         id: jenkins_pipeline_container
         uses:
