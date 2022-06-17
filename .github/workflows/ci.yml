@@ -3,14 +3,15 @@ on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
-    container:
-      image: registry.hub.docker.com/cr1tgym/jekins:latest
-      credentials:
-        username: ${{  secrets.DOCKER_CONTAINER_USERNAME }}
-        password: ${{  secrets.DOCKER_CONTAINER_REGISTRY_TOKEN }}
+    name: jenkins-static-image-pipeline-test
     steps:
       - uses: actions/checkout@v2
-      - name: compile in pre-built container
-        shell: bash
-        run: |
-          /entrypoint.sh "Jenkinsfile" "plugins.txt" "run"
+      - name: Jenkins pipeline with the static image
+        id: jenkins_pipeline_image
+        uses:
+#          ./jfr-static-image-action
+          Cr1t-GYM/jenkins-action-poc/jfr-static-image-action@master
+        with:
+          command: run
+          jenkinsfile: Jenkinsfile
+          pluginstxt: plugins.txt
