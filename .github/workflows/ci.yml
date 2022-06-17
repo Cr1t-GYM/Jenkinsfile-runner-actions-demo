@@ -1,7 +1,7 @@
 name: Java CI
 on: [push]
 jobs:
-  build:
+  jenkins-static-image-pipeline:
     runs-on: ubuntu-latest
     name: jenkins-static-image-pipeline-test
     steps:
@@ -16,3 +16,23 @@ jobs:
           jenkinsfile: Jenkinsfile
           pluginstxt: plugins.txt
           jcasc: jcasc.yml
+  jenkins-container-pipeline:
+    runs-on: ubuntu-latest
+    name: jenkins-prebuilt-container-test
+    container:
+      image: jenkins/jenkinsfile-runner
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Maven
+        uses: stCarolas/setup-maven@v4.3
+        with:
+          maven-version: 3.6.3
+      - name: Jenkins pipeline in the container
+        id: jenkins_pipeline_container
+        uses:
+#          ./jfr-container-action
+          Cr1t-GYM/jenkins-action-poc/jfr-container-action@master
+        with:
+          command: run
+          jenkinsfile: Jenkinsfile
+          pluginstxt: plugins.txt
