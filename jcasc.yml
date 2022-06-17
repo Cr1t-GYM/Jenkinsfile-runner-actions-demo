@@ -7,7 +7,7 @@ tool:
           - installSource:
               installers:
                 - maven:
-                    id: "3.8.4"
+                    id: "3.5.4"
   mavenGlobalConfig:
     globalSettingsProvider: "standard"
     settingsProvider: "standard"
