@@ -8,13 +8,15 @@ jobs:
       - name: Jenkins plugins download
         id: jenkins_plugins_download
         uses:
-          ./jenkins-plugin-installation-action
+#          ./jenkins-plugin-installation-action
+          Cr1t-GYM/jenkins-action-poc/jenkins-plugin-installation-action@master
         with:
           pluginstxt: plugins.txt
       - name: Run Jenkins pipeline
         id: run_jenkins_pipeline
         uses:
-          ./jenkinsfile-runner-action
+#          ./jenkinsfile-runner-action
+          Cr1t-GYM/jenkins-action-poc/jenkinsfile-runner-action@master
         with:
           command: run
           jenkinsfile: Jenkinsfile
