@@ -3,14 +3,18 @@ on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
+    name: jenkins-prebuilt-container-test
     container:
-      image: registry.hub.docker.com/cr1tgym/jekins:latest
-      credentials:
-        username: ${{  secrets.DOCKER_CONTAINER_USERNAME }}
-        password: ${{  secrets.DOCKER_CONTAINER_REGISTRY_TOKEN }}
+      image: jenkins/jenkinsfile-runner
     steps:
       - uses: actions/checkout@v2
-      - name: compile in pre-built container
-        shell: bash
-        run: |
-          /entrypoint.sh "Jenkinsfile" "plugins.txt" "run"
+      - name: Jenkins pipeline in the container
+        id: jenkins_pipeline_container
+        uses:
+#          ./jfr-container-action
+          Cr1t-GYM/jenkins-action-poc/jfr-container-action@master
+        with:
+          command: run
+          jenkinsfile: Jenkinsfile
+          pluginstxt: plugins_container.txt
+          jcasc: jcasc.yml
