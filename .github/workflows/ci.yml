@@ -51,5 +51,4 @@ jobs:
           Cr1t-GYM/jenkins-action-poc/jenkinsfile-runner-action@master
         with:
           command: run
-          jenkinsfile: Jenkinsfile
-          jcasc: jcasc.yml
+          jenkinsfile: Jenkinsfile-runtime
