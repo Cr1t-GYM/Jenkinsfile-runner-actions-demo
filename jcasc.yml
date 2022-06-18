@@ -7,7 +7,7 @@ tool:
           - installSource:
               installers:
                 - command:
-                    command: "apt-get update && apt-get install maven -y"
+                    command: "sudo apt-get update && apt-get install maven -y"
                     toolHome: "./maven3"
   mavenGlobalConfig:
     globalSettingsProvider: "standard"
