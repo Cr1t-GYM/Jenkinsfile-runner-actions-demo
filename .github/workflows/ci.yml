@@ -1,16 +1,54 @@
 name: Java CI
 on: [push]
 jobs:
-  build:
+  jenkins-static-image-pipeline:
     runs-on: ubuntu-latest
-    container:
-      image: registry.hub.docker.com/cr1tgym/jekins:latest
-      credentials:
-        username: ${{  secrets.DOCKER_CONTAINER_USERNAME }}
-        password: ${{  secrets.DOCKER_CONTAINER_REGISTRY_TOKEN }}
+    name: jenkins-static-image-pipeline-test
     steps:
       - uses: actions/checkout@v2
-      - name: compile in pre-built container
-        shell: bash
-        run: |
-          /entrypoint.sh "Jenkinsfile" "plugins.txt" "run"
+      - name: Jenkins pipeline with the static image
+        id: jenkins_pipeline_image
+        uses:
+          Cr1t-GYM/jenkins-action-poc/jfr-static-image-action@master
+        with:
+          command: run
+          jenkinsfile: Jenkinsfile
+          pluginstxt: plugins.txt
+          jcasc: jcasc.yml
+  jenkins-container-pipeline:
+    runs-on: ubuntu-latest
+    name: jenkins-prebuilt-container-test
+    container:
+      image: jenkins/jenkinsfile-runner
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Maven
+        uses: stCarolas/setup-maven@v4.3
+        with:
+          maven-version: 3.6.3
+      - name: Jenkins pipeline in the container
+        id: jenkins_pipeline_container
+        uses:
+          Cr1t-GYM/jenkins-action-poc/jfr-container-action@master
+        with:
+          command: run
+          jenkinsfile: Jenkinsfile
+          pluginstxt: plugins.txt
+          jcasc: jcasc.yml
+  jenkins-runtime-pipeline:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Jenkins plugins download
+        id: jenkins_plugins_download
+        uses:
+          Cr1t-GYM/jenkins-action-poc/jenkins-plugin-installation-action@master
+        with:
+          pluginstxt: plugins_min.txt
+      - name: Run Jenkins pipeline
+        id: run_jenkins_pipeline
+        uses:
+          Cr1t-GYM/jenkins-action-poc/jenkinsfile-runner-action@master
+        with:
+          command: run
+          jenkinsfile: Jenkinsfile-runtime

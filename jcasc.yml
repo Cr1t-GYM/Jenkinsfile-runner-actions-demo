@@ -1,0 +1,14 @@
+tool:
+  maven:
+    installations:
+      - name: "maven"
+        home: "./maven3"
+        properties:
+          - installSource:
+              installers:
+                - command:
+                    command: "apt-get update && apt-get install maven -y"
+                    toolHome: "./maven3"
+  mavenGlobalConfig:
+    globalSettingsProvider: "standard"
+    settingsProvider: "standard"
