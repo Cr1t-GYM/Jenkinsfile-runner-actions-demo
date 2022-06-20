@@ -8,7 +8,7 @@ tool:
             installers:
               - zip:
                   subdir: "apache-maven-3.6.3"
-                  url: "https://home.markwaite.net/~mwaite/maven/apache-maven-3.8.6-bin.zip"
+                  url: "https://home.markwaite.net/~mwaite/maven/apache-maven-3.6.3-bin.zip"
   mavenGlobalConfig:
     globalSettingsProvider: "standard"
     settingsProvider: "standard"
