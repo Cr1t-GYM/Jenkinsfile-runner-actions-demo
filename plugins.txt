@@ -1,2 +1,2 @@
 terraform
-artifact-manager-s3
+artifact-manager-s3:1.18
