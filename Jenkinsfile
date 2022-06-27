@@ -16,7 +16,7 @@ pipeline {
         }
         stage('find maven repo') {
             steps {
-                sh 'echo $MAVEN_HOME && ls -al ~/.m2'
+                sh 'find . -name ".m2"'
             }
         }
     }
