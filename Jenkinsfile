@@ -16,7 +16,7 @@ pipeline {
         }
         stage('find maven repo') {
             steps {
-                sh 'find . -name ".m2"'
+                sh 'find / -name ".m2"'
             }
         }
     }
