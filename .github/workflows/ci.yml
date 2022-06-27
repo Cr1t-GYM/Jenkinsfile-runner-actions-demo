@@ -52,4 +52,4 @@ jobs:
         with:
           command: run
           jenkinsfile: Jenkinsfile
-          jcasc: jcasc_runtime.yml
+          jcasc: jcasc.yml

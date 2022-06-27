@@ -2,11 +2,10 @@ tool:
   maven:
     installations:
       - name: "maven"
-        home: "./maven3"
         properties:
-          - installSource:
-              installers:
-                - zip:
+        - installSource:
+            installers:
+              - zip:
                   subdir: "apache-maven-3.8.6"
                   url: "https://home.markwaite.net/~mwaite/maven/apache-maven-3.8.6-bin.zip"
   mavenGlobalConfig:

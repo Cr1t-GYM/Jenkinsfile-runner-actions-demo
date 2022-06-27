@@ -1,8 +1,7 @@
 tool:
   maven:
     installations:
-      - name: maven
-        home: "./maven3"
+      - name: "maven"
         properties:
         - installSource:
             installers:
