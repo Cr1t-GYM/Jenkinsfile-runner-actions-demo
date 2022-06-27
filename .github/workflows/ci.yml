@@ -29,12 +29,13 @@ jobs:
       - name: Jenkins pipeline in the container
         id: jenkins_pipeline_container
         uses:
-          Cr1t-GYM/jenkins-action-poc/jfr-container-action@master
+          Cr1t-GYM/jenkins-action-poc/jfr-container-action@cache-maven
         with:
           command: run
           jenkinsfile: Jenkinsfile
           pluginstxt: plugins.txt
           jcasc: jcasc.yml
+          cacheMaven: true
   jenkins-runtime-pipeline:
     runs-on: ubuntu-latest
     steps:
