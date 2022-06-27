@@ -25,7 +25,7 @@ jobs:
       - name: Set up Maven
         uses: stCarolas/setup-maven@v4.3
         with:
-          maven-version: 3.6.3
+          maven-version: 3.8.6
       - name: Jenkins pipeline in the container
         id: jenkins_pipeline_container
         uses:
@@ -52,4 +52,4 @@ jobs:
         with:
           command: run
           jenkinsfile: Jenkinsfile
-          jcasc: jcasc_runtime.yml
+          jcasc: jcasc.yml
