@@ -14,10 +14,5 @@ pipeline {
                 sh 'mvn clean install -e'
             }
         }
-        stage('find maven repo') {
-            steps {
-                sh 'find / -name ".m2"'
-            }
-        }
     }
 }
