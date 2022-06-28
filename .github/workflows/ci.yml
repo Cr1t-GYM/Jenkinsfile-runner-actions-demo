@@ -9,7 +9,7 @@ jobs:
       - name: Jenkins pipeline with the static image
         id: jenkins_pipeline_image
         uses:
-          Cr1t-GYM/jenkins-action-poc/jfr-static-image-action@master
+          Cr1t-GYM/jenkins-action-poc/jfr-static-image-action@cache-maven
         with:
           command: run
           jenkinsfile: Jenkinsfile
