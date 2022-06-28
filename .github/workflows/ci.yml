@@ -15,7 +15,7 @@ jobs:
           jenkinsfile: Jenkinsfile
           pluginstxt: plugins.txt
           jcasc: jcasc.yml
-          cacheMaven: true
+          cacheMaven: false
   jenkins-container-pipeline:
     runs-on: ubuntu-latest
     name: jenkins-prebuilt-container-test
