@@ -11,6 +11,27 @@ Reference these actions in your workflow definition.
 3. Cr1t-GYM/jenkins-action-poc/jfr-container-action@master
 4. Cr1t-GYM/jenkins-action-poc/jfr-static-image-action@master
 
+## Step by step usage
+1. Prepare a Jenkinsfile in your repository. You can check [the basic syntax of Jenkins pipeline definition](https://www.jenkins.io/doc/book/pipeline/syntax/).
+2. Prepare a workflow definition under the `.github/workflows` directory. You can check [the official manual](https://docs.github.com/en/actions) for more details.
+3. In your GitHub Action workflow definition, you need to follow these steps when calling other actions in sequence:
+    1. Use a ubuntu runner for the job.
+   ```Yaml
+   jobs:
+      job-name:
+        runs-on: ubuntu-latest   
+   ```
+    2. If you use jfr-container-action, you need to declare using the `jenkins/jenkinsfile-runner` or any image extended it. If you use jfr-static-image-action, you can skip this step.
+   ```Yaml
+   jobs:
+      job-name:
+        runs-on: ubuntu-latest
+        container:
+          image: jenkins/jenkinsfile-runner             
+   ```   
+    3. Call the `actions/checkout@v2` to pull your codes into the runner.
+    4. If you use jfr-container-action, you need to call `Cr1t-GYM/jenkins-action-poc/jfr-container-action@master` and give necessary inputs. If you use jfr-static-image-action, you need to call `Cr1t-GYM/jenkins-action-poc/jfr-static-image-action@master` and give necessary inputs. See the [examples](#workflow-explanation) for these two actions.
+
 ## Workflow Explanation
 You can find the workflow definition in the [.github/workflows/ci.yml](.github/workflows/ci.yml).
 ### jenkins-static-image-pipeline
