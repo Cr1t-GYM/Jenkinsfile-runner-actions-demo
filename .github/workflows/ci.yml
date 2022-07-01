@@ -2,7 +2,7 @@ name: Java CI
 on: [push]
 jobs:
   jenkins-static-image-pipeline:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     name: jenkins-static-image-pipeline-test
     steps:
       - uses: actions/checkout@v2
@@ -17,7 +17,7 @@ jobs:
           jcasc: jcasc.yml
           cacheMaven: true
   jenkins-container-pipeline:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     name: jenkins-prebuilt-container-test
     container:
       image: jenkins/jenkinsfile-runner
