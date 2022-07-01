@@ -83,7 +83,7 @@ passing the necessary inputs, you can start the pipeline.
           pluginstxt: plugins.txt
           jcasc: jcasc.yml
 ```
-### jenkins-runtime-pipeline
+### jenkins-runtime-pipeline (Deprecated)
 This job runs all the GitHub Actions including Jenkinsfile-runner actions inside the host machine.
 It pulls your repository first, install the plugins by using `jenkins-plugin-installation-action`,
 and run the pipeline by using `jenkinsfile-runner-action`. The installation of plugins and the entrypoint of pipeline
