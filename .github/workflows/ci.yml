@@ -32,7 +32,7 @@ jobs:
           jenkinsfile: Jenkinsfile
           pluginstxt: plugins.txt
           jcasc: jcasc.yml
-          cacheMaven: true
+#          cacheMaven: true
   jenkins-runtime-pipeline:
     runs-on: ubuntu-latest
     steps:
