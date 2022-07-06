@@ -1,20 +1,20 @@
 name: Java CI
 on: [push]
 jobs:
-#  jenkins-static-image-pipeline:
-#    runs-on: ubuntu-latest
-#    name: jenkins-static-image-pipeline-test
-#    steps:
-#      - uses: actions/checkout@v2
-#      - name: Jenkins pipeline with the static image
-#        id: jenkins_pipeline_image
-#        uses:
-#          Cr1t-GYM/jenkins-action-poc/jfr-static-image-action@master
-#        with:
-#          command: run
-#          jenkinsfile: Jenkinsfile
-#          pluginstxt: plugins.txt
-#          jcasc: jcasc.yml
+  jenkins-static-image-pipeline:
+    runs-on: ubuntu-latest
+    name: jenkins-static-image-pipeline-test
+    steps:
+      - uses: actions/checkout@v2
+      - name: Jenkins pipeline with the static image
+        id: jenkins_pipeline_image
+        uses:
+          Cr1t-GYM/jenkins-action-poc/jfr-static-image-action@fix-path
+        with:
+          command: run
+          jenkinsfile: Jenkinsfile
+          pluginstxt: plugins.txt
+          jcasc: jcasc.yml
   jenkins-container-pipeline:
     runs-on: ubuntu-latest
     name: jenkins-prebuilt-container-test
@@ -31,7 +31,7 @@ jobs:
         env:
           AWS_KEY: ${{ secrets.AWS_KEY }}
         uses:
-          Cr1t-GYM/jenkins-action-poc/jfr-container-action@debug-master
+          Cr1t-GYM/jenkins-action-poc/jfr-container-action@fix-path
         with:
           command: run
           jenkinsfile: Jenkinsfile
@@ -44,13 +44,13 @@ jobs:
       - name: Jenkins plugins download
         id: jenkins_plugins_download
         uses:
-          Cr1t-GYM/jenkins-action-poc/jenkins-plugin-installation-action@master
+          Cr1t-GYM/jenkins-action-poc/jenkins-plugin-installation-action@fix-path
         with:
           pluginstxt: plugins_min.txt
       - name: Run Jenkins pipeline
         id: run_jenkins_pipeline
         uses:
-          Cr1t-GYM/jenkins-action-poc/jenkinsfile-runner-action@master
+          Cr1t-GYM/jenkins-action-poc/jenkinsfile-runner-action@fix-path
         with:
           command: run
           jenkinsfile: Jenkinsfile
