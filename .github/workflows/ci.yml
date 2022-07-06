@@ -28,6 +28,8 @@ jobs:
 #          maven-version: 3.8.6
       - name: Jenkins pipeline in the container
         id: jenkins_pipeline_container
+        env:
+          AWS_KEY: ${{ secrets.AWS_KEY }}
         uses:
           Cr1t-GYM/jenkins-action-poc/jfr-container-action@master
         with:

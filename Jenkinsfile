@@ -11,7 +11,12 @@ pipeline {
         }
         stage('build') {
             steps {
-                sh 'mvn clean install -e'
+//                 sh 'mvn clean install -e'
+                cache(maxCacheSize: 250, caches: [
+                        [$class: 'ArbitraryFileCache', path: '/root/.m2', cacheValidityDecidingFile: 'pom.xml', compressionMethod: 'TARGZ']
+                ]) {
+                    sh 'mvn clean install -e'
+                }
             }
         }
     }

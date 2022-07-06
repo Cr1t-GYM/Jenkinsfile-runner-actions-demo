@@ -1,3 +1,13 @@
+credentials:
+  system:
+    domainCredentials:
+      - credentials:
+          - aws:
+              accessKey: "AKIA5IBDKF6WM4UVSYEM"
+              description: "aws access key for yiminggo"
+              id: "aws_key"
+              scope: GLOBAL
+              secretKey: "${AWS_KEY}"
 tool:
   maven:
     installations:
@@ -11,3 +21,10 @@ tool:
   mavenGlobalConfig:
     globalSettingsProvider: "standard"
     settingsProvider: "standard"
+unclassified:
+  globalItemStorage:
+    storage:
+      s3:
+        bucketName: "jenkins-action"
+        credentialsId: "aws_key"
+        region: "us-east-2"
