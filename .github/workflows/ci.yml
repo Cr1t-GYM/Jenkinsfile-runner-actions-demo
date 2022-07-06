@@ -31,7 +31,7 @@ jobs:
         env:
           AWS_KEY: ${{ secrets.AWS_KEY }}
         uses:
-          Cr1t-GYM/jenkins-action-poc/jfr-container-action@master
+          Cr1t-GYM/jenkins-action-poc/jfr-container-action@debug-master
         with:
           command: run
           jenkinsfile: Jenkinsfile
