@@ -23,7 +23,7 @@ pipeline {
         }
         success {
             dir("${GITHUB_WORKSPACE}") {
-                archiveArtifacts '**/target/*.jar'
+                archiveArtifacts 'target/*.jar'
             }
         }
     }
