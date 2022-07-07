@@ -31,3 +31,8 @@ aws:
     useHttp: false
     usePathStyleUrl: false
     useTransferAcceleration: false
+unclassified:
+  artifactManager:
+    artifactManagerFactories:
+      - jclouds:
+          provider: "s3"
