@@ -11,7 +11,8 @@ pipeline {
         }
         stage('build') {
             steps {
-                sh 'mvn clean install -e'
+                sh 'mvn clean install -B --no-transfer-progress'
+                sh 'pwd && ls -al'
             }
         }
     }
