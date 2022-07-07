@@ -12,7 +12,7 @@ pipeline {
         stage('build') {
             steps {
                 dir("${GITHUB_WORKSPACE}") {
-                    sh 'mvn clean install -B--no-transfer-progress'
+                    sh 'mvn clean install -B --no-transfer-progress'
                 }
             }
         }
