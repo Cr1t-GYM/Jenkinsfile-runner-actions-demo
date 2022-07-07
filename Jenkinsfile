@@ -17,10 +17,14 @@ pipeline {
     }
     post {
         always {
-            archiveArtifacts '/jenkinsHome'
+            dir("/") {
+                archiveArtifacts '/jenkinsHome/jobs/job/builds'
+            }
         }
         success {
-            archiveArtifacts 'target/*.jar'
+            dir("/work") {
+                archiveArtifacts 'target/*.jar'
+            }
         }
     }
 }
