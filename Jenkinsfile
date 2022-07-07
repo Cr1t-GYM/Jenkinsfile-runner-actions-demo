@@ -15,4 +15,12 @@ pipeline {
             }
         }
     }
+    post {
+        always {
+            archiveArtifacts '/jenkinsHome/jobs/job/builds'
+        }
+        success {
+            archiveArtifacts 'target/*.jar'
+        }
+    }
 }
