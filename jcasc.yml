@@ -24,6 +24,7 @@ tool:
 aws:
   awsCredentials:
     credentialsId: "aws_key"
+    region: "us-east-2"
   s3:
     container: "jenkins-action"
     disableSessionToken: false
