@@ -4,15 +4,15 @@ pipeline {
         maven 'maven'
     }
     stages {
-        dir("${GITHUB_WORKSPACE}") {
-            stage('env') {
-                steps {
-                    sh 'mvn --version'
-                }
+        stage('env') {
+            steps {
+                sh 'mvn --version'
             }
-            stage('build') {
-                steps {
-                    sh 'mvn clean install -B --no-transfer-progress'
+        }
+        stage('build') {
+            steps {
+                dir("${GITHUB_WORKSPACE}") {
+                    sh 'mvn clean install -B--no-transfer-progress'
                 }
             }
         }
