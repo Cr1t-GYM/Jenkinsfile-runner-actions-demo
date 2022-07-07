@@ -18,7 +18,7 @@ pipeline {
     post {
         always {
             dir("/") {
-                archiveArtifacts '/jenkinsHome/jobs/job/builds'
+                archiveArtifacts 'jenkinsHome/jobs/job/builds/*'
             }
         }
         success {
