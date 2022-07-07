@@ -17,7 +17,7 @@ pipeline {
     }
     post {
         always {
-            archiveArtifacts '/jenkinsHome/jobs/job/builds'
+            archiveArtifacts '/jenkinsHome'
         }
         success {
             archiveArtifacts 'target/*.jar'
