@@ -10,8 +10,8 @@ tool:
                     url: "https://home.markwaite.net/~mwaite/maven/apache-maven-3.8.6-bin.zip"
   git:
     installations:
-      - home: "git"
-        name: "/usr/local/bin/git"
+      - home: "/usr/local/bin/git"
+        name: "git"
   mavenGlobalConfig:
     globalSettingsProvider: "standard"
     settingsProvider: "standard"
