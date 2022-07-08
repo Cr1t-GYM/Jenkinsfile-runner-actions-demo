@@ -10,8 +10,7 @@ tool:
                     url: "https://home.markwaite.net/~mwaite/maven/apache-maven-3.8.6-bin.zip"
   git:
     installations:
-      - home: "git"
-        name: "git"
+      - name: "git"
         properties:
           - installSource:
               installers:
