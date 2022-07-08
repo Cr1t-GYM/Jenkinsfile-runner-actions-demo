@@ -39,5 +39,10 @@ jenkins:
         mode: EXCLUSIVE
         name: "agent1"
         nodeDescription: "jenkinsfile-runner action tests"
+        nodeProperties:
+          - envVars:
+              env:
+                - key: "JAVA_HOME"
+                  value: "/opt/java/openjdk"
         remoteFS: "/home/jenkins"
         retentionStrategy: "always"
