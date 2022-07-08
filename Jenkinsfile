@@ -18,6 +18,7 @@ pipeline {
                 maven 'maven'
             }
             steps {
+                sh 'mvn --version'
                 sh 'mvn clean install -B --no-transfer-progress'
             }
         }
