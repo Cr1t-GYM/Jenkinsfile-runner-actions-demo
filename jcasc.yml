@@ -15,10 +15,9 @@ tool:
         properties:
           - installSource:
               installers:
-                - command:
-                    command: "true"
-                    label: "git-2.17 && linux"
-                    toolHome: "/usr/bin/git"
+                - zip:
+                    subdir: "git-2.17.1"
+                    url: "https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.17.1.tar.gz"
   mavenGlobalConfig:
     globalSettingsProvider: "standard"
     settingsProvider: "standard"
