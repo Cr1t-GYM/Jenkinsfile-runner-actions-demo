@@ -3,11 +3,40 @@ tool:
     installations:
       - name: "maven"
         properties:
-        - installSource:
-            installers:
-              - zip:
-                  subdir: "apache-maven-3.8.6"
-                  url: "https://home.markwaite.net/~mwaite/maven/apache-maven-3.8.6-bin.zip"
+          - installSource:
+              installers:
+                - zip:
+                    subdir: "apache-maven-3.8.6"
+                    url: "https://home.markwaite.net/~mwaite/maven/apache-maven-3.8.6-bin.zip"
   mavenGlobalConfig:
     globalSettingsProvider: "standard"
     settingsProvider: "standard"
+credentials:
+  system:
+    domainCredentials:
+      - credentials:
+          - basicSSHUserPrivateKey:
+              description: "jenkins aws server key"
+              id: "jenkins_aws_us_east_2"
+              privateKeySource:
+                directEntry:
+                  privateKey: "${AWS_SSH_PKEY}"
+              scope: GLOBAL
+              username: "jenkins"
+jenkins:
+  nodes:
+    - permanent:
+        labelString: "agent1"
+        launcher:
+          ssh:
+            credentialsId: "jenkins_aws_us_east_2"
+            host: "${AWS_SSH_HOST}"
+            port: 4444
+            sshHostKeyVerificationStrategy:
+              manuallyTrustedKeyVerificationStrategy:
+                requireInitialManualTrust: false
+        mode: EXCLUSIVE
+        name: "agent1"
+        nodeDescription: "jenkinsfile-runner action tests"
+        remoteFS: "/home/jenkins"
+        retentionStrategy: "always"
