@@ -10,13 +10,20 @@ tool:
                     url: "https://home.markwaite.net/~mwaite/maven/apache-maven-3.8.6-bin.zip"
   git:
     installations:
-      - name: "git"
+      - home: "git"
+        name: "git"
         properties:
           - installSource:
               installers:
-                - zip:
-                    subdir: "git-2.17.1"
-                    url: "https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.17.1.tar.gz"
+                - command:
+                    command: |-
+                      wget https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.17.1.tar.gz
+                      tar zxvf v2.17.1.tar.gz
+                      cd git # or whatever directory the tar.gz file contains
+                      ./configure
+                      make
+                      make install
+                    toolHome: "git"
   mavenGlobalConfig:
     globalSettingsProvider: "standard"
     settingsProvider: "standard"
