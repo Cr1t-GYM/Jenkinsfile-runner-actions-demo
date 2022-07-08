@@ -7,7 +7,7 @@ pipeline {
                 maven 'maven'
             }
             steps {
-                sh 'mvn clean install -B --no-transfer-progresse'
+                sh 'mvn clean install -B --no-transfer-progress'
             }
         }
         stage('build on AWS Server') {
