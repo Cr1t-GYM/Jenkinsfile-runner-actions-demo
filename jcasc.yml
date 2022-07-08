@@ -16,14 +16,8 @@ tool:
           - installSource:
               installers:
                 - command:
-                    command: |-
-                      wget https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.17.1.tar.gz
-                      tar zxvf v2.17.1.tar.gz
-                      cd git # or whatever directory the tar.gz file contains
-                      ./configure
-                      make
-                      make install
-                    toolHome: "git"
+                    command: "true"
+                    toolHome: "/usr/bin/git"
   mavenGlobalConfig:
     globalSettingsProvider: "standard"
     settingsProvider: "standard"
