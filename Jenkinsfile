@@ -16,6 +16,7 @@ pipeline {
             }
             tools {
                 maven 'maven'
+                git 'git'
             }
             steps {
                 sh 'git clone -b master https://github.com/Cr1t-GYM/Jenkinsfile-runner-actions-demo'
