@@ -11,13 +11,7 @@ tool:
   git:
     installations:
       - home: "git"
-        name: "git"
-        properties:
-          - installSource:
-              installers:
-                - command:
-                    command: "true"
-                    toolHome: "/usr/bin/git"
+        name: "/usr/local/bin/git"
   mavenGlobalConfig:
     globalSettingsProvider: "standard"
     settingsProvider: "standard"
