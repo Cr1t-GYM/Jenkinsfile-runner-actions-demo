@@ -31,6 +31,7 @@ jenkins:
           ssh:
             credentialsId: "jenkins_aws_us_east_2"
             host: "${AWS_SSH_HOST}"
+            javaPath: "/opt/java/openjdk/bin/java"
             port: 4444
             sshHostKeyVerificationStrategy:
               manuallyTrustedKeyVerificationStrategy:
