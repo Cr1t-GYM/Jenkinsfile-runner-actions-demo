@@ -4,6 +4,9 @@ jobs:
   jenkins-static-image-pipeline:
     runs-on: ubuntu-latest
     name: jenkins-static-image-pipeline-test
+    defaults:
+      run:
+        working-directory: demo/java
     steps:
       - uses: actions/checkout@v2
       - name: Jenkins pipeline with the static image
@@ -18,6 +21,9 @@ jobs:
   jenkins-container-pipeline:
     runs-on: ubuntu-latest
     name: jenkins-prebuilt-container-test
+    defaults:
+      run:
+        working-directory: demo/java
     container:
       image: jenkins/jenkinsfile-runner
     steps:
@@ -37,6 +43,9 @@ jobs:
           jcasc: jcasc.yml
   jenkins-runtime-pipeline:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: demo/java
     steps:
       - uses: actions/checkout@v2
       - name: Jenkins plugins download
