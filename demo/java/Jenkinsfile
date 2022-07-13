@@ -12,6 +12,7 @@ pipeline {
         stage('build') {
             steps {
                 dir('demo/java') {
+                    sh 'ls -al .'
                     sh 'mvn clean install -e'
                 }
             }
