@@ -1,6 +1,7 @@
 name: Java CI
 on: [push]
 jobs:
+  # Java
   java-jenkins-static-image-pipeline:
     runs-on: ubuntu-latest
     name: java:jenkins-static-image-pipeline-test
@@ -31,3 +32,34 @@ jobs:
           jenkinsfile: demo/java/Jenkinsfile
           pluginstxt: demo/java/plugins.txt
           jcasc: demo/java/jcasc.yml
+  # JavaScript
+  javascript-jenkins-static-image-pipeline:
+    runs-on: ubuntu-latest
+    name: javascript:jenkins-static-image-pipeline-test
+    steps:
+      - uses: actions/checkout@v2
+      - name: Jenkins pipeline with the static image
+        id: jenkins_pipeline_image
+        uses:
+          Cr1t-GYM/jenkins-action-poc/jfr-static-image-action@master
+        with:
+          command: run
+          jenkinsfile: demo/javascript/my-react-app/Jenkinsfile
+          pluginstxt: demo/javascript/my-react-app/plugins.txt
+          jcasc: demo/javascript/my-react-app/jcasc.yml
+  javascript-jenkins-container-pipeline:
+    runs-on: ubuntu-latest
+    name: javascript:jenkins-prebuilt-container-test
+    container:
+      image: jenkins/jenkinsfile-runner
+    steps:
+      - uses: actions/checkout@v2
+      - name: Jenkins pipeline in the container
+        id: jenkins_pipeline_container
+        uses:
+          Cr1t-GYM/jenkins-action-poc/jfr-container-action@master
+        with:
+          command: run
+          jenkinsfile: demo/javascript/my-react-app/Jenkinsfile
+          pluginstxt: demo/javascript/my-react-app/plugins.txt
+          jcasc: demo/javascript/my-react-app/jcasc.yml

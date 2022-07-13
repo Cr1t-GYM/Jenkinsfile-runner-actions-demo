@@ -1,0 +1,14 @@
+pipeline {
+    agent any
+    stages {
+        stage('Build') {
+            steps {
+                dir("${GITHUB_WORKSPACE}/demo/javascript/my-react-app") {
+                    nodejs(nodeJSInstallationName: 'node18') {
+                        sh 'npm ci'
+                    }
+                }
+            }
+        }
+    }
+}

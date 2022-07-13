@@ -1,0 +1,9 @@
+tool:
+  nodejs:
+    installations:
+      - name: "node18"
+        properties:
+          - installSource:
+              installers:
+                - nodeJSInstaller:
+                    id: "18.3.0"
