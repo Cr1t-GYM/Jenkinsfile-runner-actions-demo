@@ -7,11 +7,12 @@ pipeline {
         stage('env') {
             steps {
                 sh 'mvn --version'
+                sh 'echo $GITHUB_WORKSPACE'
             }
         }
         stage('build') {
             steps {
-                dir('${GITHUB_WORKSPACE}/demo/java') {
+                dir("${GITHUB_WORKSPACE}/demo/java") {
                     sh 'ls -al .'
                     sh 'mvn clean install -e'
                 }
