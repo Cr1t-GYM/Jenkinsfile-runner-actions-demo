@@ -33,25 +33,25 @@ jobs:
           pluginstxt: demo/java/plugins.txt
           jcasc: demo/java/jcasc.yml
   # JavaScript
-  javascript-jenkins-static-image-pipeline:
-    runs-on: ubuntu-latest
-    name: javascript:jenkins-static-image-pipeline-test
-    steps:
-      - uses: actions/checkout@v2
-      - name: Jenkins pipeline with the static image
-        id: jenkins_pipeline_image
-        uses:
-          Cr1t-GYM/jenkins-action-poc/jfr-static-image-action@master
-        with:
-          command: run
-          jenkinsfile: demo/javascript/my-react-app/Jenkinsfile
-          pluginstxt: demo/javascript/my-react-app/plugins.txt
-          jcasc: demo/javascript/my-react-app/jcasc.yml
+#  javascript-jenkins-static-image-pipeline:
+#    runs-on: ubuntu-latest
+#    name: javascript:jenkins-static-image-pipeline-test
+#    steps:
+#      - uses: actions/checkout@v2
+#      - name: Jenkins pipeline with the static image
+#        id: jenkins_pipeline_image
+#        uses:
+#          Cr1t-GYM/jenkins-action-poc/jfr-static-image-action@master
+#        with:
+#          command: run
+#          jenkinsfile: demo/javascript/my-react-app/Jenkinsfile
+#          pluginstxt: demo/javascript/my-react-app/plugins.txt
+#          jcasc: demo/javascript/my-react-app/jcasc.yml
   javascript-jenkins-container-pipeline:
     runs-on: ubuntu-latest
     name: javascript:jenkins-prebuilt-container-test
     container:
-      image: jenkins/jenkinsfile-runner
+      image: ghcr.io/cr1t-gym/jenkinsfile-runner-image-release-test:master
     steps:
       - uses: actions/checkout@v2
       - name: Jenkins pipeline in the container
