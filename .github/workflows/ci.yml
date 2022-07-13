@@ -1,7 +1,7 @@
 name: Java CI
 on: [push]
 jobs:
-  jenkins-static-image-pipeline:
+  java-jenkins-static-image-pipeline:
     runs-on: ubuntu-latest
     name: java:jenkins-static-image-pipeline-test
     steps:
@@ -15,7 +15,7 @@ jobs:
           jenkinsfile: demo/java/Jenkinsfile
           pluginstxt: demo/java/plugins.txt
           jcasc: demo/java/jcasc.yml
-  jenkins-container-pipeline:
+  java-jenkins-container-pipeline:
     runs-on: ubuntu-latest
     name: java:jenkins-prebuilt-container-test
     container:
