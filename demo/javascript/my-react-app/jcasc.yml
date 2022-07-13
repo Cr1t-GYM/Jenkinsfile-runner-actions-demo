@@ -6,4 +6,5 @@ tool:
           - installSource:
               installers:
                 - nodeJSInstaller:
-                    id: "18.3.0"
+                    id: "12.11.1"
+                    npmPackagesRefreshHours: 48
