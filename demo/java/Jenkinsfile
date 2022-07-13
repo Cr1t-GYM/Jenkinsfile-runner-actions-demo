@@ -11,7 +11,7 @@ pipeline {
         }
         stage('build') {
             steps {
-                dir('demo/java') {
+                dir('${GITHUB_WORKSPACE}/demo/java') {
                     sh 'ls -al .'
                     sh 'mvn clean install -e'
                 }
