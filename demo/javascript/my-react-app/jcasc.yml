@@ -1,7 +1,7 @@
 tool:
   nodejs:
     installations:
-      - name: "node18"
+      - name: "NodeJS 18.3.0"
         properties:
           - installSource:
               installers:
