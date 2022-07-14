@@ -2,9 +2,7 @@ jenkins:
   updateCenter:
     sites:
       - id: "default"
-        url: "https://updates.jenkins.io/update-center.json"
-      - id: "node"
-        url: "https://updates.jenkins.io/updates/hudson.plugins.nodejs.tools.NodeJSInstaller.json"
+        url: "https://updates.jenkins.io/stable/update-center.json"
 tool:
   nodejs:
     installations:
