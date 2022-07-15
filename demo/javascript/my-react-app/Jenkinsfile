@@ -1,15 +1,16 @@
 pipeline {
     agent any
     stages {
-        stage('Build') {
+        stage('Prepare') {
             steps {
-                echo 'Hello World'
-//                 script {
-//                     for (d in DownloadService.Downloadable.all()) {
-//                       println("${d.url} -> ${d.updateNow().kind}");
-//                     }
-//                 }
+                script {
+                    for (d in DownloadService.Downloadable.all()) {
+                      println("${d.url} -> ${d.updateNow().kind}");
+                    }
+                }
             }
+        }
+        stage('Build') {
             steps {
                 dir("${GITHUB_WORKSPACE}/demo/javascript/my-react-app") {
                     nodejs(nodeJSInstallationName: 'NodeJS 18.3.0') {
