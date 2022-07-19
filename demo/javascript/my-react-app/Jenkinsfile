@@ -1,15 +1,6 @@
 pipeline {
     agent any
     stages {
-        stage('Prepare') {
-            steps {
-                script {
-                    for (d in DownloadService.Downloadable.all()) {
-                      println("${d.url} -> ${d.updateNow().kind}");
-                    }
-                }
-            }
-        }
         stage('Build') {
             steps {
                 dir("${GITHUB_WORKSPACE}/demo/javascript/my-react-app") {

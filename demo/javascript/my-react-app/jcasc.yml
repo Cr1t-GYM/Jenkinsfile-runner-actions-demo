@@ -1,8 +1,3 @@
-jenkins:
-  updateCenter:
-    sites:
-      - id: "default"
-        url: "https://updates.jenkins.io/stable/update-center.json"
 tool:
   nodejs:
     installations:
