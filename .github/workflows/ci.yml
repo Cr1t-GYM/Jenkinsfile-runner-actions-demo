@@ -12,7 +12,7 @@ jobs:
         uses:
           Cr1t-GYM/jenkins-action-poc/jfr-static-image-action@master
         with:
-          command: lint
+          command: run
           jenkinsfile: demo/java/Jenkinsfile
           pluginstxt: demo/java/plugins.txt
           jcasc: demo/java/jcasc.yml
@@ -28,7 +28,7 @@ jobs:
         uses:
           Cr1t-GYM/jenkins-action-poc/jfr-container-action@master
         with:
-          command: lint
+          command: run
           jenkinsfile: demo/java/Jenkinsfile
           pluginstxt: demo/java/plugins.txt
           jcasc: demo/java/jcasc.yml
@@ -43,7 +43,7 @@ jobs:
         uses:
           Cr1t-GYM/jenkins-action-poc/jfr-static-image-action@master
         with:
-          command: lint
+          command: run
           jenkinsfile: demo/javascript/my-react-app/Jenkinsfile
           pluginstxt: demo/javascript/my-react-app/plugins.txt
           jcasc: demo/javascript/my-react-app/jcasc.yml
@@ -59,7 +59,7 @@ jobs:
         uses:
           Cr1t-GYM/jenkins-action-poc/jfr-container-action@master
         with:
-          command: lint
+          command: run
           jenkinsfile: demo/javascript/my-react-app/Jenkinsfile
           pluginstxt: demo/javascript/my-react-app/plugins.txt
           jcasc: demo/javascript/my-react-app/jcasc.yml
