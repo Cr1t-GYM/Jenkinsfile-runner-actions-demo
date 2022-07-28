@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     name: jenkins-prebuilt-container-test
     container:
-      image: jenkins/jenkinsfile-runner
+      image: ghcr.io/cr1t-gym/jenkinsfile-runner:test-image
     steps:
       - uses: actions/checkout@v2
       - name: Set up Maven
