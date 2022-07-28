@@ -4,6 +4,13 @@ pipeline {
         maven 'maven'
     }
     stages {
+        stage('check jenkins core version') {
+            steps {
+                script {
+                    println 'Jenkins core version: ' + Jenkins.instance.getVersion()
+                }
+            }
+        }
         stage('env') {
             steps {
                 sh 'mvn --version'
