@@ -1,1 +1,1 @@
-nodejs
+# no extra plugins needed

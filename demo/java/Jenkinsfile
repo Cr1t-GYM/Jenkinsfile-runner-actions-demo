@@ -11,7 +11,7 @@ pipeline {
         }
         stage('build') {
             steps {
-                dir("${GITHUB_WORKSPACE}/demo/java") {
+                dir("./demo/java") {
                     sh 'mvn clean install -B --no-transfer-progress'
                 }
             }

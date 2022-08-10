@@ -3,10 +3,8 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                dir("${GITHUB_WORKSPACE}/demo/javascript/my-react-app") {
-                    nodejs(nodeJSInstallationName: 'NodeJS 18.3.0') {
-                        sh 'npm ci'
-                    }
+                dir("./demo/javascript/my-react-app") {
+                    sh 'npm ci'
                 }
             }
         }
