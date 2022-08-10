@@ -1,0 +1,13 @@
+tool:
+  maven:
+    installations:
+      - name: maven
+        home: "/maven"
+        properties:
+          - installSource:
+              installers:
+                - maven:
+                    id: "3.8.6"
+  mavenGlobalConfig:
+    globalSettingsProvider: "standard"
+    settingsProvider: "standard"
