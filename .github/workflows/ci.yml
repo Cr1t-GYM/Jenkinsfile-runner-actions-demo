@@ -32,6 +32,31 @@ jobs:
           jenkinsfile: demo/java/Jenkinsfile
           pluginstxt: demo/java/plugins.txt
           jcasc: demo/java/jcasc.yml
+  java-jenkins-runtime-pipeline:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macOS-latest, windows-latest]
+    runs-on: ${{matrix.os}}
+    name: java:jenkins-runtime-pipeline
+    steps:
+      - uses: actions/checkout@v2
+      - name : Setup Jenkins
+        uses:
+          Cr1t-GYM/jenkins-action-poc/jenkins-setup@master
+      - name: Jenkins plugins download
+        id: jenkins_plugins_download
+        uses:
+          Cr1t-GYM/jenkins-action-poc/jenkins-plugin-installation-action@master
+        with:
+          pluginstxt: demo/java/plugins.txt
+      - name: Run Jenkins pipeline
+        id: run_jenkins_pipeline
+        uses:
+          Cr1t-GYM/jenkins-action-poc/jenkinsfile-runner-action@master
+        with:
+          command: run
+          jenkinsfile: demo/java/Jenkinsfile
+          jcasc: demo/java/jcasc.yml
   # JavaScript
   javascript-jenkins-static-image-pipeline:
     runs-on: ubuntu-latest
@@ -47,3 +72,30 @@ jobs:
           jenkinsfile: demo/javascript/my-react-app/Jenkinsfile
           pluginstxt: demo/javascript/my-react-app/plugins.txt
           baseImage: node:18.3.0
+  javascript-jenkins-runtime-pipeline:
+    strategy:
+      matrix:
+        os: [ ubuntu-latest, macOS-latest, windows-latest ]
+    runs-on: ${{matrix.os}}
+    name: javascript:jenkins-runtime-pipeline
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name : Setup Jenkins
+        uses:
+          Cr1t-GYM/jenkins-action-poc/jenkins-setup@master
+      - name: Jenkins plugins download
+        id: jenkins_plugins_download
+        uses:
+          Cr1t-GYM/jenkins-action-poc/jenkins-plugin-installation-action@master
+        with:
+          pluginstxt: demo/javascript/my-react-app/plugins.txt
+      - name: Run Jenkins pipeline
+        id: run_jenkins_pipeline
+        uses:
+          Cr1t-GYM/jenkins-action-poc/jenkinsfile-runner-action@master
+        with:
+          command: run
+          jenkinsfile: demo/javascript/my-react-app/Jenkinsfile
