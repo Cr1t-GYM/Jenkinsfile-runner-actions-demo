@@ -3,9 +3,8 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                dir("./demo/javascript/my-react-app") {
-                    sh 'npm ci'
-                }
+                sh 'pwd && ls'
+                sh 'npm ci'
             }
         }
     }
