@@ -2,9 +2,8 @@ pipeline {
     agent any
     tools {
         maven 'maven'
+        jdk 'jdk8'
     }
-    jdk = tool name: 'jdk8'
-    env.JAVA_HOME = "${jdk}"
     stages {
         stage('env') {
             steps {
