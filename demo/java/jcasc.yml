@@ -2,7 +2,7 @@ tool:
   maven:
     installations:
       - name: "maven"
-        home: "/maven"
+        home: "~/maven"
         properties:
           - installSource:
               installers:
@@ -11,7 +11,7 @@ tool:
   jdk:
     installations:
       - name: jdk8
-        home: "/jdk8"
+        home: "~/jdk8"
         properties:
           - installSource:
               installers:
