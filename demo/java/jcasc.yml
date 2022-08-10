@@ -2,7 +2,6 @@ tool:
   maven:
     installations:
       - name: "maven"
-        home: "~/maven"
         properties:
           - installSource:
               installers:
