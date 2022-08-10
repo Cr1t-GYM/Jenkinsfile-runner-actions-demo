@@ -16,7 +16,7 @@ tool:
           - installSource:
               installers:
                 - adoptOpenJdkInstaller:
-                    id: "jdk-8u332-b09"
+                    id: "jdk8u332-b09"
   mavenGlobalConfig:
     globalSettingsProvider: "standard"
     settingsProvider: "standard"
