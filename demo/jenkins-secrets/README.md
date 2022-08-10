@@ -27,22 +27,21 @@ Here is the step-by-step example.
 ```
 3. Now your Jenkins execution environment has an environment variable called `AWS_KEY`.
     1. If you want to refer `AWS_KEY` in the JCasC, you can refer it as `${AWS_KEY}` like the following example.
-```yaml
-credentials:
-  system:
-    domainCredentials:
-      - credentials:
-          - aws:
-              accessKey: "your-access-key"
-              description: "aws access key for yourself"
-              id: "aws_key"
-              scope: GLOBAL
-              secretKey: "${AWS_KEY}"
-```
+   ```yaml
+      credentials:
+         system:
+            domainCredentials:
+               - credentials:
+                    - aws:
+                         accessKey: "your-access-key"
+                         description: "aws access key for yourself"
+                         id: "aws_key"
+                         scope: GLOBAL
+                         secretKey: "${AWS_KEY}"
+   ```
    2. If you want to refer `AWS_KEY` in the Jenkinsfile, you can refer it as `${AWS_KEY}` in the pipeline.
-```groovy
-pipeline {
-    echo "${AWS_KEY}"
-}
-```
-
+   ```groovy
+      pipeline {
+          echo "${AWS_KEY}"
+      }
+   ```
