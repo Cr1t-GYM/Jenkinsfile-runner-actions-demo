@@ -11,6 +11,7 @@ pipeline {
         }
         stage('build') {
             steps {
+                sh 'pwd && ls'
                 dir("./demo/java") {
                     sh 'mvn clean install -B --no-transfer-progress'
                 }
