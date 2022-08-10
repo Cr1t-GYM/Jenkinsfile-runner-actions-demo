@@ -20,7 +20,7 @@ jobs:
     runs-on: ubuntu-latest
     name: java:jenkins-prebuilt-container-test
     container:
-      image: ghcr.io/cr1t-gym/jenkinsfile-runner:test-image
+      image: ghcr.io/jenkinsci/jenkinsfile-runner:master
     steps:
       - uses: actions/checkout@v2
       - name: Jenkins pipeline in the container
@@ -51,7 +51,7 @@ jobs:
     runs-on: ubuntu-latest
     name: javascript:jenkins-prebuilt-container-test
     container:
-      image: ghcr.io/cr1t-gym/jenkinsfile-runner:test-image
+      image: ghcr.io/jenkinsci/jenkinsfile-runner:master
     steps:
       - uses: actions/checkout@v2
       - name: Jenkins pipeline in the container
