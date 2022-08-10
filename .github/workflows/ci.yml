@@ -99,3 +99,18 @@ jobs:
         with:
           command: run
           jenkinsfile: demo/javascript/my-react-app/Jenkinsfile
+  # Scala
+  scala-jenkins-static-image-pipeline:
+    runs-on: ubuntu-latest
+    name: scala:jenkins-static-image-pipeline-test
+    steps:
+      - uses: actions/checkout@v2
+      - name: Jenkins pipeline with the static image
+        id: jenkins_pipeline_image
+        uses:
+          Cr1t-GYM/jenkins-action-poc/jfr-static-image-action@master
+        with:
+          command: run
+          jenkinsfile: demo/scala/scalaexample/Jenkinsfile
+          pluginstxt: demo/scala/scalaexample/plugins.txt
+          baseImage: hseeberger/scala-sbt:eclipse-temurin-11.0.14.1_1.6.2_2.13.8

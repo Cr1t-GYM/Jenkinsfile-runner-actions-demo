@@ -1,0 +1,15 @@
+pipeline {
+    agent any
+    stages {
+        stage('env') {
+            steps {
+                sh 'sbt -V'
+            }
+        }
+        stage('build') {
+            steps {
+                sh 'sbt test'
+            }
+        }
+    }
+}
