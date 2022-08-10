@@ -1,9 +1,10 @@
 name: Java CI
 on: [push]
 jobs:
-  jenkins-static-image-pipeline:
+  # Java
+  java-jenkins-static-image-pipeline:
     runs-on: ubuntu-latest
-    name: jenkins-static-image-pipeline-test
+    name: java:jenkins-static-image-pipeline-test
     steps:
       - uses: actions/checkout@v2
       - name: Jenkins pipeline with the static image
@@ -12,12 +13,12 @@ jobs:
           Cr1t-GYM/jenkins-action-poc/jfr-static-image-action@master
         with:
           command: run
-          jenkinsfile: Jenkinsfile
-          pluginstxt: plugins.txt
-          jcasc: jcasc.yml
-  jenkins-container-pipeline:
+          jenkinsfile: demo/java/Jenkinsfile
+          pluginstxt: demo/java/plugins.txt
+          jcasc: demo/java/jcasc.yml
+  java-jenkins-container-pipeline:
     runs-on: ubuntu-latest
-    name: jenkins-prebuilt-container-test
+    name: java:jenkins-prebuilt-container-test
     container:
       image: ghcr.io/cr1t-gym/jenkinsfile-runner-image-release-test:master
     steps:
@@ -28,6 +29,88 @@ jobs:
           Cr1t-GYM/jenkins-action-poc/jfr-container-action@master
         with:
           command: run
-          jenkinsfile: Jenkinsfile
-          pluginstxt: plugins.txt
-          jcasc: jcasc.yml
+          jenkinsfile: demo/java/Jenkinsfile
+          pluginstxt: demo/java/plugins.txt
+          jcasc: demo/java/jcasc.yml
+  java-jenkins-runtime-pipeline:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macOS-latest, windows-latest]
+    runs-on: ${{matrix.os}}
+    name: java:jenkins-runtime-pipeline
+    steps:
+      - uses: actions/checkout@v2
+      - name : Setup Jenkins
+        uses:
+          Cr1t-GYM/jenkins-action-poc/jenkins-setup@master
+      - name: Jenkins plugins download
+        id: jenkins_plugins_download
+        uses:
+          Cr1t-GYM/jenkins-action-poc/jenkins-plugin-installation-action@master
+        with:
+          pluginstxt: demo/java/plugins.txt
+      - name: Run Jenkins pipeline
+        id: run_jenkins_pipeline
+        uses:
+          Cr1t-GYM/jenkins-action-poc/jenkinsfile-runner-action@master
+        with:
+          command: run
+          jenkinsfile: demo/java/Jenkinsfile
+          jcasc: demo/java/jcasc.yml
+  # JavaScript
+  javascript-jenkins-static-image-pipeline:
+    runs-on: ubuntu-latest
+    name: javascript:jenkins-static-image-pipeline-test
+    steps:
+      - uses: actions/checkout@v2
+      - name: Jenkins pipeline with the static image
+        id: jenkins_pipeline_image
+        uses:
+          Cr1t-GYM/jenkins-action-poc/jfr-static-image-action@master
+        with:
+          command: run
+          jenkinsfile: demo/javascript/my-react-app/Jenkinsfile
+          pluginstxt: demo/javascript/my-react-app/plugins.txt
+          baseImage: node:18.3.0
+  javascript-jenkins-runtime-pipeline:
+    strategy:
+      matrix:
+        os: [ ubuntu-latest, macOS-latest, windows-latest ]
+    runs-on: ${{matrix.os}}
+    name: javascript:jenkins-runtime-pipeline
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name : Setup Jenkins
+        uses:
+          Cr1t-GYM/jenkins-action-poc/jenkins-setup@master
+      - name: Jenkins plugins download
+        id: jenkins_plugins_download
+        uses:
+          Cr1t-GYM/jenkins-action-poc/jenkins-plugin-installation-action@master
+        with:
+          pluginstxt: demo/javascript/my-react-app/plugins.txt
+      - name: Run Jenkins pipeline
+        id: run_jenkins_pipeline
+        uses:
+          Cr1t-GYM/jenkins-action-poc/jenkinsfile-runner-action@master
+        with:
+          command: run
+          jenkinsfile: demo/javascript/my-react-app/Jenkinsfile
+  # Scala
+  scala-jenkins-static-image-pipeline:
+    runs-on: ubuntu-latest
+    name: scala:jenkins-static-image-pipeline-test
+    steps:
+      - uses: actions/checkout@v2
+      - name: Jenkins pipeline with the static image
+        id: jenkins_pipeline_image
+        uses:
+          Cr1t-GYM/jenkins-action-poc/jfr-static-image-action@master
+        with:
+          command: run
+          jenkinsfile: demo/scala/scalaexample/Jenkinsfile
+          pluginstxt: demo/scala/scalaexample/plugins.txt
+          baseImage: hseeberger/scala-sbt:eclipse-temurin-11.0.14.1_1.6.2_2.13.8
