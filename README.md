@@ -9,6 +9,7 @@ All the demos are stored in `./demo` directory.
 2. [JavaScript demo](./demo/javascript/my-react-app): It's a React project. You can generate it by using `npm init react-app ./my-react-app` in the command line.
 3. [Scala demo](./demo/scala/scalaexample): It's a Scala project. You can generate it by using `sbt new scala/scalatest-example.g8` in the command line.
 4. [Jenkins secrets demo](./demo/jenkins-secrets): It teaches you how to define and use secrets in the Jenkins pipeline.
+5. [Jenkins environment variables demo](./demo/jenkins-envs): It teaches you how to define and use environment variables in the Jenkins pipeline.
 
 ## How you can access Jenkinsfile-runner actions in your project?
 Reference these actions in your workflow definition.
