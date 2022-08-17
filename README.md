@@ -12,6 +12,7 @@ All the demos are stored in `./demo` directory. You can use them with `jenkinsfi
 5. [Jenkins environment variables demo](./demo/jenkins-envs): It teaches you how to define and use environment variables in the Jenkins pipeline.
 6. [s3-artifact-manager demo](./demo/s3-artifact-manager): It teaches you how to store the pipeline results to an external storage.
 7. [jobcacher demo](./demo/jobcacher): It teaches you how to cache the pipeline dependencies.
+8. [remote agent demo](./demo/remote-agent): It teaches you wow to trigger the building in the remote agents.
 
 ## How you can access Jenkinsfile-runner actions in your project?
 Reference these actions in your workflow definition.
