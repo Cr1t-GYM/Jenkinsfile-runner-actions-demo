@@ -14,7 +14,7 @@ you will need to grant it `AmazonS3FullAccess` in the IAM user permission page.
 Here is the step-by-step example for `jfr-container-action`:
 1. Firstly, you will need to create a plugin list file `plugins.txt` which includes `artifact-manager-s3`.
 2. Follow the example of [jenkins-secrets](../jenkins-secrets) and create two secrets for `AWS access key id` and `AWS secret access key`, respectively.
-In this example, `AWS_ACCESS_KEY_ID` corresponds to `AWS access key id` and `AWS_SECRET_ACCESS_KEY` corresponds to `AWS secret access key`.
+In this example, `AWS_ACCESS_KEY_ID` corresponds to the `AWS access key id` and `AWS_SECRET_ACCESS_KEY` corresponds to the `AWS secret access key`.
 Please note your environment variables must start with `JENKINS_` in `jfr-static-image-action`.
 3. Create a JCasC file like the following configuration example. In this example, you need to replace the following fields.
     1. `aws:awsCredentials:region` - Your user region.
