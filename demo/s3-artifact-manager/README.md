@@ -4,7 +4,8 @@ This example shows how to copy the pipeline results to an external object storag
 [artifact-manager-s3](https://plugins.jenkins.io/artifact-manager-s3/). In this example, it takes `AWS S3` as an example
 and other object storage services should work as well.
 
-If you use `AWS S3` like this example, you need to know your the region of the user, `AWS access key id`, `AWS secret access key`, 
+If you use `AWS S3` like this example, you will need to know your the region of the user, `AWS access key id`, `AWS secret access key`, 
+
 `AWS S3 bucket name` and `AWS S3 bucket prefix` in advance. For example, if your `S3 URI` for a specific folder under a 
 bucket is `s3://jenkins-action/test/`, `AWS S3 bucket name` is `jenkins-action` and `AWS S3 bucket prefix` is `test/`.
 `AWS access key id` and `AWS secret access key` can be downloaded when you create a new user for your account.
