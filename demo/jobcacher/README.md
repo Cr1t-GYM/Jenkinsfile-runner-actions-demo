@@ -34,7 +34,7 @@ unclassified:
         credentialsId: "aws_key"
         region: "us-east-2"
 ```
-4. Create the `Jenkinsfile` which uses cache functions provided by `jobcacher`.
+4. Create the `Jenkinsfile` which uses cache functions provided by the `jobcacher`.
 You can check [the documentations of cache function](https://www.jenkins.io/doc/pipeline/steps/jobcacher/#cache-caches-files-from-previous-build-to-current-build). 
 It assumes there is a maven project in your workspace, and the plugin will cache the dependencies specified by `pom.xml`.
 `pom.xml` will be used to determine whether the cache is up-to-date or not. 
