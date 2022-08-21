@@ -3,7 +3,7 @@
 This example shows how to cache the pipeline data by using the [jobcacher plugin](https://plugins.jenkins.io/jobcacher/).
 In this example, it takes `AWS S3` as an example and other compatible object storage services should work as well.
 
-If you use `AWS S3` like this example, you need to know your the region of the user, `AWS access key id`, 
+If you use `AWS S3` like this example, you will need to know your the region of the user, `AWS access key id`, 
 `AWS secret access key` and `AWS S3 bucket name`. The descriptions about these prerequisites are explained in
 [s3-artifact-manager example](../s3-artifact-manager) in detailed.
 
