@@ -54,7 +54,7 @@ You can check the documentations for [archiveArtifacts](https://www.jenkins.io/d
 [stash](https://www.jenkins.io/doc/pipeline/steps/workflow-basic-steps/#stash-stash-some-files-to-be-used-later-in-the-build) and 
 [unstash](https://www.jenkins.io/doc/pipeline/steps/workflow-basic-steps/#unstash-restore-files-previously-stashed).
 In this example, it only shows how to use `archiveArtifacts` for uploading your pipeline results.
-It assumes there is a maven project in your workspace and `artifact-manager-s3` will help you upload the compiled targets to the `AWS S3` after
+It assumes that there is a maven project in your workspace and `artifact-manager-s3` will help you upload the compiled targets to the `AWS S3` after
 the pipeline builds the sources successfully.
 ```groovy
 pipeline {
