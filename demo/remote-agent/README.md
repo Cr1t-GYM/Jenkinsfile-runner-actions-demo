@@ -81,7 +81,7 @@ pipeline {
     }
 }
 ```
-5. In your workflow definition, you need to set up your credentials and `jfr-container-action` correctly.
+5. In your workflow definition, you will need to set up your credentials and `jfr-container-action` correctly.
 ```yaml
       - name: Jenkins pipeline in the container
         id: jenkins_pipeline_container
