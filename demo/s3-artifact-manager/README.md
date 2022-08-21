@@ -9,7 +9,7 @@ If you use `AWS S3` like this example, you need to know your the region of the u
 bucket is `s3://jenkins-action/test/`, `AWS S3 bucket name` is `jenkins-action` and `AWS S3 bucket prefix` is `test/`.
 `AWS access key id` and `AWS secret access key` can be downloaded when you create a new user for your account.
 Furthermore, in order to make this AWS access key have the ability to manage your S3 storage,
-you need to give it `AmazonS3FullAccess` in the IAM user permission page.
+you will need to grant it `AmazonS3FullAccess` in the IAM user permission page.
 
 Here is the step-by-step example in `jfr-container-action`.
 1. Firstly, you need to create a plugin list file `plugins.txt` which includes `artifact-manager-s3`.
