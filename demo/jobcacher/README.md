@@ -7,7 +7,7 @@ If you use `AWS S3` like this example, you need to know your the region of the u
 `AWS secret access key` and `AWS S3 bucket name`. The descriptions about these prerequisites are explained in
 [s3-artifact-manager example](../s3-artifact-manager) in detailed.
 
-Here is the step-by-step example in `jfr-container-action`.
+Here is the step-by-step example for the `jfr-container-action`:
 1. Firstly, you need to create a plugin list file `plugins.txt` which includes `jobcacher`.
 2. Follow the example of [jenkins-secrets](../jenkins-secrets) and create two secrets for `AWS access key id` and `AWS secret access key`.
    In this example, `AWS_ACCESS_KEY_ID` corresponds to `AWS access key id` and `AWS_SECRET_ACCESS_KEY` corresponds to `AWS secret access key`.
