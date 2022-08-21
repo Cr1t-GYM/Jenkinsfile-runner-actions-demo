@@ -9,7 +9,7 @@ If you use `AWS S3` like this example, you need to know your the region of the u
 
 Here is the step-by-step example for the `jfr-container-action`:
 1. Firstly, you need to create a plugin list file `plugins.txt` which includes `jobcacher`.
-2. Follow the example of [jenkins-secrets](../jenkins-secrets) and create two secrets for `AWS access key id` and `AWS secret access key`.
+2. Follow the example of the [jenkins-secrets](../jenkins-secrets) and create two separate secrets for `AWS access key id` and `AWS secret access key`.
    In this example, `AWS_ACCESS_KEY_ID` corresponds to `AWS access key id` and `AWS_SECRET_ACCESS_KEY` corresponds to `AWS secret access key`.
    Please note your environment variables must start with `JENKINS_` in `jfr-static-image-action`.
 3. Create a JCasC file like the following configuration example. In this example, you need to replace the following fields.
