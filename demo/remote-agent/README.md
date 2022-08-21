@@ -13,7 +13,7 @@ Here is the step-by-step example in `jfr-container-action`.
    As your host machine might already have a ssh server running on the 22 port, you should use another port for the docker command, such as -p 4444:22. 
    In this example, it uses -p 4444:22 for port mapping. 
    If you create the machines in the cloud using cloud providers such as AWS, you will need to create the correct inbound rule for the port 4444.
-   For Example, if you use port 4444 for network redirection, you need to create the TCP protocol for port 4444 and allow the network from any ip ranges.
+   For Example, if you use port 4444 for network redirection, you will need to create the TCP protocol for port 4444 and allow the network from any ip ranges.
 4. Create a JCasC file like the following configuration example.
 ```yaml
 credentials:
