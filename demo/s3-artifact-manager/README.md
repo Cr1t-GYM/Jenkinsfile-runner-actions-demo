@@ -16,7 +16,7 @@ Here is the step-by-step example for `jfr-container-action`:
 2. Follow the example of [jenkins-secrets](../jenkins-secrets) and create two secrets for `AWS access key id` and `AWS secret access key`, respectively.
 In this example, `AWS_ACCESS_KEY_ID` corresponds to the `AWS access key id` and `AWS_SECRET_ACCESS_KEY` corresponds to the `AWS secret access key`.
 Please note that the names of your environment variables must start with `JENKINS_` in `jfr-static-image-action`.
-3. Create a JCasC file like the following configuration example. In this example, you need to replace the following fields.
+3. Create a JCasC file like the following configuration example. In this example, you need to replace the following fields:
     1. `aws:awsCredentials:region` - Your user region.
     2. `aws:s3:container` - Your `AWS S3 bucket name`.
     3. `aws:s3:prefix` - Your `AWS S3 bucket prefix`.
