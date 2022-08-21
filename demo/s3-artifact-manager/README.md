@@ -11,7 +11,7 @@ bucket is `s3://jenkins-action/test/`, `AWS S3 bucket name` is `jenkins-action` 
 Furthermore, in order to make this AWS access key have the ability to manage your S3 storage,
 you will need to grant it `AmazonS3FullAccess` in the IAM user permission page.
 
-Here is the step-by-step example in `jfr-container-action`.
+Here is the step-by-step example for `jfr-container-action`:
 1. Firstly, you need to create a plugin list file `plugins.txt` which includes `artifact-manager-s3`.
 2. Follow the example of [jenkins-secrets](../jenkins-secrets) and create two secrets for `AWS access key id` and `AWS secret access key`.
 In this example, `AWS_ACCESS_KEY_ID` corresponds to `AWS access key id` and `AWS_SECRET_ACCESS_KEY` corresponds to `AWS secret access key`.
