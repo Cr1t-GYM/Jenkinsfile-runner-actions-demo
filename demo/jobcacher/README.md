@@ -36,7 +36,7 @@ unclassified:
 ```
 4. Create the `Jenkinsfile` which uses cache functions provided by the `jobcacher`.
 You can check [the documentations of cache function](https://www.jenkins.io/doc/pipeline/steps/jobcacher/#cache-caches-files-from-previous-build-to-current-build). 
-It assumes there is a maven project in your workspace, and the plugin will cache the dependencies specified by `pom.xml`.
+It assumes that there is a maven project in your workspace, and the plugin will cache the dependencies as specified ih the `pom.xml` file.
 `pom.xml` will be used to determine whether the cache is up-to-date or not. 
 Only up-to-date caches will be restored and only outdated caches will be created.
 ```groovy
