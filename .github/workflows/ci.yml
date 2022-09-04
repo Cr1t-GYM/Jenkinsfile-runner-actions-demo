@@ -10,7 +10,7 @@ jobs:
       - name: Jenkins pipeline with the static image
         id: jenkins_pipeline_image
         uses:
-          Cr1t-GYM/jenkins-action-poc/jfr-static-image-action@master
+          jenkinsci/jfr-static-image-action@master
         with:
           command: run
           jenkinsfile: demo/java/Jenkinsfile
@@ -20,13 +20,13 @@ jobs:
     runs-on: ubuntu-latest
     name: java:jenkins-prebuilt-container-test
     container:
-      image: ghcr.io/cr1t-gym/jenkinsfile-runner-image-release-test:master
+      image: ghcr.io/jenkinsci/jenkinsfile-runner:master
     steps:
       - uses: actions/checkout@v2
       - name: Jenkins pipeline in the container
         id: jenkins_pipeline_container
         uses:
-          Cr1t-GYM/jenkins-action-poc/jfr-container-action@master
+          jenkinsci/jfr-container-action@master
         with:
           command: run
           jenkinsfile: demo/java/Jenkinsfile
@@ -42,17 +42,17 @@ jobs:
       - uses: actions/checkout@v2
       - name : Setup Jenkins
         uses:
-          Cr1t-GYM/jenkins-action-poc/jenkins-setup@master
+          jenkinsci/jfr-setup-action@master
       - name: Jenkins plugins download
         id: jenkins_plugins_download
         uses:
-          Cr1t-GYM/jenkins-action-poc/jenkins-plugin-installation-action@master
+          jenkinsci/jfr-plugin-installation-action@master
         with:
           pluginstxt: demo/java/plugins.txt
       - name: Run Jenkins pipeline
         id: run_jenkins_pipeline
         uses:
-          Cr1t-GYM/jenkins-action-poc/jenkinsfile-runner-action@master
+          jenkinsci/jfr-runtime-action@master
         with:
           command: run
           jenkinsfile: demo/java/Jenkinsfile
@@ -66,7 +66,7 @@ jobs:
       - name: Jenkins pipeline with the static image
         id: jenkins_pipeline_image
         uses:
-          Cr1t-GYM/jenkins-action-poc/jfr-static-image-action@master
+          jenkinsci/jfr-static-image-action@master
         with:
           command: run
           jenkinsfile: demo/javascript/my-react-app/Jenkinsfile
@@ -85,17 +85,17 @@ jobs:
           node-version: 18
       - name : Setup Jenkins
         uses:
-          Cr1t-GYM/jenkins-action-poc/jenkins-setup@master
+          jenkinsci/jfr-setup-action@master
       - name: Jenkins plugins download
         id: jenkins_plugins_download
         uses:
-          Cr1t-GYM/jenkins-action-poc/jenkins-plugin-installation-action@master
+          jenkinsci/jfr-plugin-installation-action@master
         with:
           pluginstxt: demo/javascript/my-react-app/plugins.txt
       - name: Run Jenkins pipeline
         id: run_jenkins_pipeline
         uses:
-          Cr1t-GYM/jenkins-action-poc/jenkinsfile-runner-action@master
+          jenkinsci/jfr-runtime-action@master
         with:
           command: run
           jenkinsfile: demo/javascript/my-react-app/Jenkinsfile
@@ -108,7 +108,7 @@ jobs:
       - name: Jenkins pipeline with the static image
         id: jenkins_pipeline_image
         uses:
-          Cr1t-GYM/jenkins-action-poc/jfr-static-image-action@master
+          jenkinsci/jfr-static-image-action@master
         with:
           command: run
           jenkinsfile: demo/scala/scalaexample/Jenkinsfile
