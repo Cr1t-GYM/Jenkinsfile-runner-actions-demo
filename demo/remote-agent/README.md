@@ -89,7 +89,7 @@ pipeline {
           AWS_SSH_PKEY: ${{ secrets.AWS_SSH_PKEY }}
           AWS_SSH_HOST: ${{ secrets.AWS_SSH_HOST }}
         uses:
-          Cr1t-GYM/jenkins-action-poc/jfr-container-action@master
+          jenkinsci/jfr-container-action@master
         with:
           command: run
           jenkinsfile: Jenkinsfile
