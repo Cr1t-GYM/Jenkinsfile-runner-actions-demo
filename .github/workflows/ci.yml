@@ -11,17 +11,17 @@ jobs:
       - uses: actions/checkout@v2
       - name: Setup Jenkins
         uses:
-          jenkinsci/jenkins-setup@master # set up jenkins action environment
+          jenkinsci/jfr-setup-action@master # set up jenkins action environment
       - name: Jenkins plugins download
         id: jenkins_plugins_download
         uses:
-          jenkinsci/jenkins-plugin-installation-action@master # download extra dependencies
+          jenkinsci/jfr-plugin-installation-action@master # download extra dependencies
         with:
           pluginstxt: plugins.txt # plugin path
       - name: Run Jenkins pipeline
         id: run_jenkins_pipeline
         uses:
-          jenkinsci/jenkinsfile-runner-action@master # launch your pipeline
+          jenkinsci/jfr-runtime-action@master # launch your pipeline
         with:
           command: run # jenkinsfile-runner launch option
           jenkinsfile: Jenkinsfile # Jenkinsfile path
