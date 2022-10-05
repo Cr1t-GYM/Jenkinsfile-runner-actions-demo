@@ -86,5 +86,5 @@ first and then call the `Cr1t-GYM/jenkins-action-poc/jenkinsfile-runner-action@m
         with:
           command: run
           jenkinsfile: Jenkinsfile
-          jcasc: jcasc_runtime.yml
+          jcasc: jcasc.yml
 ```

@@ -1,55 +1,28 @@
 name: Java CI
 on: [push]
 jobs:
-#  jenkins-static-image-pipeline:
-#    runs-on: ubuntu-latest
-#    name: jenkins-static-image-pipeline-test
-#    steps:
-#      - uses: actions/checkout@v2
-#      - name: Jenkins pipeline with the static image
-#        id: jenkins_pipeline_image
-#        uses:
-#          Cr1t-GYM/jenkins-action-poc/jfr-static-image-action@master
-#        with:
-#          command: run
-#          jenkinsfile: Jenkinsfile
-#          pluginstxt: plugins.txt
-#          jcasc: jcasc.yml
-  jenkins-container-pipeline:
-    runs-on: ubuntu-latest
-    name: jenkins-prebuilt-container-test
-    container:
-      image: jenkins/jenkinsfile-runner
+  java-jenkins-runtime-pipeline:
+    strategy:
+      matrix:
+        os: [ ubuntu-latest, macOS-latest, windows-latest ] # running in different os runners
+    runs-on: ${{matrix.os}}
+    name: java:jenkins-runtime-pipeline
     steps:
       - uses: actions/checkout@v2
-      - name: Set up Maven
-        uses: stCarolas/setup-maven@v4.3
-        with:
-          maven-version: 3.6.3
-      - name: Jenkins pipeline in the container
-        id: jenkins_pipeline_container
+      - name: Setup Jenkins
         uses:
-          Cr1t-GYM/jenkins-action-poc/jfr-container-action@master
+          jenkinsci/jenkins-setup@master # set up jenkins action environment
+      - name: Jenkins plugins download
+        id: jenkins_plugins_download
+        uses:
+          jenkinsci/jenkins-plugin-installation-action@master # download extra dependencies
         with:
-          command: run
-          jenkinsfile: Jenkinsfile
-          pluginstxt: plugins.txt
-          jcasc: jcasc.yml
-#  jenkins-runtime-pipeline:
-#    runs-on: ubuntu-latest
-#    steps:
-#      - uses: actions/checkout@v2
-#      - name: Jenkins plugins download
-#        id: jenkins_plugins_download
-#        uses:
-#          Cr1t-GYM/jenkins-action-poc/jenkins-plugin-installation-action@master
-#        with:
-#          pluginstxt: plugins_min.txt
-#      - name: Run Jenkins pipeline
-#        id: run_jenkins_pipeline
-#        uses:
-#          Cr1t-GYM/jenkins-action-poc/jenkinsfile-runner-action@master
-#        with:
-#          command: run
-#          jenkinsfile: Jenkinsfile
-#          jcasc: jcasc_runtime.yml
+          pluginstxt: plugins.txt # plugin path
+      - name: Run Jenkins pipeline
+        id: run_jenkins_pipeline
+        uses:
+          jenkinsci/jenkinsfile-runner-action@master # launch your pipeline
+        with:
+          command: run # jenkinsfile-runner launch option
+          jenkinsfile: Jenkinsfile # Jenkinsfile path
+          jcasc: jcasc.yml # jcasc path
