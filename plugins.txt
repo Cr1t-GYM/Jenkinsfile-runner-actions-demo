@@ -1,2 +1,1 @@
-terraform
-artifact-manager-s3:1.18
+adoptopenjdk
