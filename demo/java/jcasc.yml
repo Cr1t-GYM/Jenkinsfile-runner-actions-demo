@@ -9,13 +9,13 @@ tool:
                     id: "3.8.4"
   jdk:
     installations:
-      - name: jdk8
-        home: "~/jdk8"
+      - name: jdk11
+        home: "~/jdk11"
         properties:
           - installSource:
               installers:
                 - adoptOpenJdkInstaller:
-                    id: "jdk8u332-b09"
+                    id: "jdk-11.0.14.1+1"
   mavenGlobalConfig:
     globalSettingsProvider: "standard"
     settingsProvider: "standard"
